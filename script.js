@@ -38,6 +38,14 @@ async function getUserInfo(searchUser){
 
     let name = document.getElementById('name');
     name.innerHTML = res.login
+    
+    let bio = document.getElementById('bio');
+    bio.innerHTML=res.bio
+    
+    let type = document.getElementById('type')
+    type.innerHTML=res.type
+
+
     } catch (error) {
         console.log(error)
     }

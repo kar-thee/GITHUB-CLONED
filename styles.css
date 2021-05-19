@@ -1,0 +1,18 @@
+#navbarIcon{
+    height: 40px;
+    border-radius: 50%;
+    width: 80px;
+}
+
+#avatar{
+    border-radius: 50%;
+}
+
+/* #name{ */
+    /*border: 1px solid aqua; */
+    position: absolute;
+    /* top: 300px; */
+    top: 300px;
+    /* left: 100px; */
+    /* padding-left: 25px; */
+/* } */

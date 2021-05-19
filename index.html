@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="githubIcon.png" type="image">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <title>GitHub ClonedApp</title>
@@ -13,27 +14,53 @@
     <div class="container">
         <nav class="navbar navbar-light bg-light">
             <div class="container-fluid">
-              <a class="navbar-brand">GitHub</a>
+              <a class="navbar-brand">
+                <span><img src="githubIcon.png" alt="Git" id="navbarIcon"></span>
+                GitHub</a>
               <form class="d-flex" id="form">
                 <input id="searchUser" class="form-control me-2" type="text" placeholder="Search User" >
                 <button id="submitUser" class="btn btn-outline-success" type="button">Search</button>
               </form>
             </div>
           </nav>
-          <div id="div1">
-            <div id="div2">
-              <img id="avatar" class="avatar flex-shrink-0 mt-3 mb-3 me-3 mb-md-0 me-md-4" src="" width="200" height="200" alt="">
-            </div>
-            <div id="div3" class="flex-1">
-              <h1 class="" id="name">
-                
-              </h1>
-              <div id="div4">
+          <div class="container d-flex flex-row">
+            <div id="div2" class="d-inline-flex">
+              <img id="avatar" class=" flex-shrink-0 mt-3 mb-3 me-3 mb-md-0 me-md-4" src=""  alt="" width="270" height="270">
+            </div >
+              <div class="d-flex flex-column">
+                <h1 class="mt-4 mb-2 ms-3 p-2" id="name">
 
-              </div>
+                </h1>
+                <div id="bio" class="ms-3 p-2" > 
+
+                </div>
+                <div class="d-inline-flex p-2 bd-highlight ms-3" >
+                  <span class="badge bg-secondary" id="type"> </span>
+                </div>
             </div>
           </div>
-    </div>
+
+
+          <!-- <div class="d-flex flex-row">
+            <div id="blog">   </div>
+            <div id="twitter">    </div>
+            <div id="email">    </div>
+          </div> -->
+          <!-- <div id="div1" class="d-flex flex-row">
+            <div id="div2" >
+              <img id="avatar" class="avatar flex-shrink-0 mt-3 mb-3 me-3 mb-md-0 me-md-4" src=""  alt="" width="200" height="200">
+            </div>
+            <div id="div3" class="mb-3 ">
+              <h1 class="align-self-center" >
+                
+              </h1>
+            </div>
+          </div>
+              <div id="div4">
+
+            </div>
+           -->
+    <!-- </div> -->
     <script src="script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
 
