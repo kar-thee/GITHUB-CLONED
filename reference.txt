@@ -1,0 +1,29 @@
+References
+
+api Url ---> https://api.github.com
+
+with header -> Accept: application/vnd.github.v3+json
+
+
+
+https://api.github.com/users/kar-thee
+to get user Details
+|
+to use as header for fetch
+-H "Accept: application/vnd.github.v3+json" \
+  https://api.github.com/users/USERNAME
+
+https://api.github.com/users/kar-thee/repos
+to get user repos summary
+
+https://api.github.com/repos/kar-thee/fakeData-api-Practice1
+to get detailed info about particular repo with extra network & subscribers count
+
+https://api.github.com/repos/kar-thee/fakeData-api-Practice1/contents
+to get the contents of that particular repo - like name,path,url(to get content with sha),download url[display code itself],type,,sha and other urls too
+
+https://raw.githubusercontent.com/kar-thee/fakeData-api-Practice1/master/script.js
+displays code in that particular file to a new html page
+
+https://api.github.com/repos/kar-thee/fakeData-api-Practice1/readme/
+to display particular repo readme file

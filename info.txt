@@ -1,0 +1,33 @@
+ReadMe 
+
+This is a hackathon-1 dated 18th may 2021 from 2pm  till 19th may 2021 2 pm....
+
+Dear Zen Students,
+
+
+Welcome to the first hackathon event in zen class. Please find below the problem statement and guidelines. 
+
+
+Task Details:
+
+
+Problem statement:
+
+GITHUB CLONE - Create a web app to clone the GitHub application. 
+
+
+Requirement :
+
+Create functionality to list the repository names of a user.
+
+Create functionality to find the user and repository.
+
+List the files in the repository.
+
+
+Useful links and learning resources:
+
+Getting started: https://developer.github.com/v3/#authentication
+
+API info: https://docs.github.com/en/free-pro-team@latest/rest/overview/endpoints-available-for-github-apps
+
