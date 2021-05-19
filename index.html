@@ -23,21 +23,70 @@
               </form>
             </div>
           </nav>
+          <!-- navbar ends -->
           <div class="container d-flex flex-row">
             <div id="div2" class="d-inline-flex">
-              <img id="avatar" class=" flex-shrink-0 mt-3 mb-3 me-3 mb-md-0 me-md-4" src=""  alt="" width="270" height="270">
+              <a href="" id=profileImg>
+                <img id="avatar" class=" flex-shrink-0 mt-3 mb-3 me-3 mb-md-0 me-md-4" src=""  alt="" width="270" height="270">
+              </a>
             </div >
               <div class="d-flex flex-column">
                 <h1 class="mt-4 mb-2 ms-3 p-2" id="name">
-
+                  
                 </h1>
+                
+                <div class="d-inline-flex flex-row p-2 bd-highlight ms-3" >
+                  <span class="badge bg-primary p-2 me-2 " id="login" title="Login-id"> </span>
+                  <span class="badge bg-secondary p-2 me-2" id="type"> </span>
+                  <span class="badge bg-secondary p-2 me-2" id="location"> </span>
+                </div>
+                
                 <div id="bio" class="ms-3 p-2" > 
 
+                </div>  
+                <!-- badge -->
+                
+                  <!-- badge-span -->
+                
+                <div class="d-flex flex-row  mb-3 ms-3">
+                 <a href="" id="blog-a"><div class="p-2 " id="blog" title="Blog">    </div></a> 
+                  <a href="" id="mail-a"><div class="p-2 " id="email" title="mail-Id">   </div></a>
+                  <a href="" id="twitter-a"><div class="p-2 " id="twitter" title="twitter">   </div></a>
                 </div>
-                <div class="d-inline-flex p-2 bd-highlight ms-3" >
-                  <span class="badge bg-secondary" id="type"> </span>
-                </div>
+                <!-- <div class="d-inline-flex p-2  ms-3" id="email">
+
+                </div> -->
             </div>
+          </div>
+          <!-- profile container ends -->
+          <div class="container mt-3">
+            <ul class="nav nav-tabs">
+              <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="">
+                  Repositories
+                  <span class="badge bg-info p-2 ms-2" id="total-repos"> </span>
+                </a>
+              </li>
+              <div id=test>
+                <div id="repoNavbar">
+                  <nav class="navbar navbar-light bg-light">
+                    <div class="container ">
+                      
+                      <div class="d-flex flex-row  mb-3">
+                        <span class="badge bg-warning p-2 me-3" id="following"> </span>
+                        <span class="badge bg-success p-2 me-3" id="followers"> </span>
+                        <span class="badge bg-primary p-2 me-3" id="lasted"> </span>
+                        <span class="badge bg-danger p-2 me-3" id="started"> </span>
+                        <span class="badge bg-info p-2 me-3" id="repo-count"> </span>
+                      </div>
+
+                      <form class="d-flex justify-content-end" id="repoForm">
+                        <input id="searchRepo" class="form-control me-2 p-2" type="text" placeholder="user Repositories" >
+                        <button id="submitRepo" class="btn btn-outline-success" type="button">Search</button>
+                      </form>
+                </div>
+              </div>
+
           </div>
 
 

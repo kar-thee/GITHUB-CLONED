@@ -8,6 +8,11 @@
     border-radius: 50%;
 }
 
+#test{
+    height: 300px;
+    width: 100%;
+    background-color: royalblue;
+}
 /* #name{ */
     /*border: 1px solid aqua; */
     position: absolute;
