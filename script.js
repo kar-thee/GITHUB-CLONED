@@ -1,32 +1,51 @@
 var url = `https://api.github.com/users/`
-// var userName ="" //"kar-thee"
+//  var userName =" " //"kar-thee"
  var repoName = ""  //"fakeData-api-Practice1"
 
- var searchUser = document.getElementById("searchUser")
+ 
  var submitUser = document.getElementById("submitUser")
  submitUser.addEventListener("click", function () {
-     userName = searchUser.value;
-     //console.log(userName)
-     //alert(userName)
+    //  let userName = searchUser;
+    //  console.log(userName)
      
+    let searchUser = document.getElementById("searchUser").value
+    // alert(searchUser);
+     getUserInfo(searchUser);
  })
 
-console.log(userName)
+
+// let searchUser = document.getElementById("searchUser").value
+
+//  getUserInfo(searchUser);
 
 
 
 
 
+async function getUserInfo(searchUser){
+    var userUrl = "https://api.github.com/users/"+searchUser
+    try {
+        var req = await fetch(userUrl,{
+            method : "GET" ,
+            headers :{
+                "Accept": "application/vnd.github.v3+json"
+            }
+        })
+    var res = await req.json()
+    console.log(res)
+    let img = document.getElementById('avatar')
+    img.src=res.avatar_url;
 
-
-
-
-
-function getUserInfo(url){
-    var userUrl = url+userName
+    let name = document.getElementById('name');
+    name.innerHTML = res.login
+    } catch (error) {
+        console.log(error)
+    }
     
-    console.log(userUrl)
-    getUserRepo(userUrl)
+
+    
+    //console.log(userUrl);
+    //getUserRepo(userUrl)
 }
 
 function getUserRepo(userUrl){
