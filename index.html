@@ -82,12 +82,54 @@
 
                       <form class="d-flex justify-content-end" id="repoForm">
                         <input id="searchRepo" class="form-control me-2 p-2" type="text" placeholder="user Repositories" >
-                        <button id="submitRepo" class="btn btn-outline-success" type="button">Search</button>
+                        <button id="submitRepo" class="btn btn-outline-success" type="button" data-bs-toggle="modal" data-bs-target="#particularRepoModal">Search</button>
                       </form>
                 </div>
+                <!-- modal -->
+
+                <div class="modal fade" id="particularRepoModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal-dialog modal-dialog-scrollable">  <!-- .modal-dialog-scrollable -can be used -->
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <a href="" id="particularRepoModalHeader-a"><h5 class="modal-title" id="particularRepoModalHeader">
+                          
+                        </h5></a>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                      </div>
+                      <div class="modal-body" id="particularRepoModalBody">
+                        <ul id="modalrepolist" class="d-flex flex-column">
+                          <li id="descriptionlist"class="p-2 mb-3">  </li>
+                          <hr>
+                          <li id="subscriberslist" class="p-2 mb-3">   </li>
+                          <li id="watcherslist"class="p-2 mb-3">    </li>
+                          <li id="starslist"class="p-2 mb-3">   </li>
+                          <li id="forkslist"class="p-2 mb-3">   </li>
+                          <li id="createdlist"class="p-2 ">   </li>
+                        </ul>
+                        <div id="repocontentpage">
+
+                        </div>
+                      </div>
+                      
+                      <!-- <div class="modal-body" id="particularRepoModalBodycontent">
+                        to be created dynamically
+                      </div> -->
+                      <div class="modal-footer">
+                        <span class="badge bg-warning p-2 me-3" id="languageparticular"> </span>
+                        <button type="button" class="btn btn-primary" data-bs-target="" id="contentbutton">Content</button>
+
+                        
+
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
               </div>
 
           </div>
+
+
 
 
           <!-- <div class="d-flex flex-row">

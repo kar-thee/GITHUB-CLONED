@@ -27,3 +27,8 @@ displays code in that particular file to a new html page
 
 https://api.github.com/repos/kar-thee/fakeData-api-Practice1/readme/
 to display particular repo readme file
+
+COLOUR code
+#161b22-NAV
+#090c10-PAGE
+#686868-SCROL

@@ -95,7 +95,12 @@ async function getUserInfo(searchUser){
     repoForm.addEventListener('click', event => {
         repoValue = searchRepo.value
         let repoCompleteUrl = repobaseurl+searchUser+`/`+repoValue
-        console.log(repoCompleteUrl)
+
+        particularRepoSearch(repoCompleteUrl) //paritcular repo modal function
+        
+         
+
+
     })
 
 
@@ -111,6 +116,110 @@ async function getUserInfo(searchUser){
     //console.log(userUrl);
     //getUserRepo(userUrl)
 }
+
+
+async function particularRepoSearch(repoCompleteUrl){
+    try {
+    var reporeqparticular = await fetch(repoCompleteUrl,{
+        method : "GET" ,
+        headers :{
+            "Accept": "application/vnd.github.v3+json"
+        }
+    })
+var reporesparticular = await reporeqparticular.json()
+console.log("this is repo response particular")
+console.log(reporesparticular)
+
+let particularRepoModalHeader = document.getElementById('particularRepoModalHeader')
+particularRepoModalHeader.innerHTML = reporesparticular.name
+let particularRepoModalHeaderA = document.getElementById('particularRepoModalHeader-a')
+particularRepoModalHeaderA.href = reporesparticular.html_url
+
+let descriptionlist = document.getElementById('descriptionlist')
+descriptionlist.innerHTML =`<h6>Description</h6>${reporesparticular.description}`
+let subscriberslist = document.getElementById('subscriberslist')
+subscriberslist.innerHTML =`Subscribers : ${reporesparticular.subscribers_count}`
+let watcherslist = document.getElementById('watcherslist')
+watcherslist.innerHTML =`Watchers : ${reporesparticular.watchers_count}`
+let starslist = document.getElementById('starslist')
+starslist.innerHTML =`Stars : ${reporesparticular.stargazers_count}`
+let forkslist = document.getElementById('forkslist')
+forkslist.innerHTML =`Forks : ${reporesparticular.forks}`
+let createdlist = document.getElementById('createdlist')
+createdlist.innerHTML =`Created @ : ${reporesparticular.created_at}`
+let languageparticular = document.getElementById('languageparticular')
+languageparticular.innerHTML = `Language : ${reporesparticular.language}`
+
+let contentbutton = document.getElementById('contentbutton')
+contentbutton.addEventListener('click', e =>{
+    let repocontentpage = document.getElementById('repocontentpage')
+    let particularRepoModalBodycontent = document.createElement('div')
+    particularRepoModalBodycontent.id = "particularRepoModalBodycontent"
+    particularRepoModalBodycontent.className= "modal-body"
+     let contentsurlparticular = reporesparticular.contents_url
+     let contentsUrlnew =contentsurlparticular.split("{")
+     console.log(contentsUrlnew[0]+" jubucontentsurlsplitted")
+
+     let contentul = document.createElement('ul')
+     contentul.setAttribute('class',"d-flex flex-column")
+     contentul.setAttribute('id','contentul')
+
+     contentparticular(contentsUrlnew[0]); //call abc
+
+     async function contentparticular(url){
+        //testing content repo
+
+        try {
+            var reporeqs = await fetch(url,{
+                method : "GET" ,
+                headers :{
+                    "Accept": "application/vnd.github.v3+json"
+                }
+            })
+        var repores = await reporeq.json()
+        console.log("this is repo-content response")
+        console.log (repores)
+        // particularrepocontentchild = repores
+        repores.forEach(element => {
+        let elementliName = document.createElement('li')
+        elementliName.setAttribute('class',"p-2 mb-3")
+        elementliName.setAttribute('id',`${element.name}`)
+        elementliName.innerHTML = element.name
+        let contentlink = document.createElement('a')
+        contentlink.setAttribute('href',`${element.download_url}`)
+        contentlink.append(elementliName)
+        contentul.append(contentlink)
+        })
+
+    
+        }
+         catch (error) {
+            return (error)
+        }
+    }
+
+     
+     
+
+    //  console.log(particularrepocontentchild+"foreachelemen")
+
+     
+     
+    repocontentpage.append(contentul)
+})
+    
+}
+ catch (error) {
+    console.log(error)
+}
+}
+
+
+
+
+
+
+
 
 async function getUserRepo(repoUrl){
     try {
