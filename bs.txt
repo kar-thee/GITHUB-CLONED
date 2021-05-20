@@ -1,0 +1,22 @@
+bs
+
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-title">name</h5>
+    <h6 class="card-subtitle mb-2 text-muted">Card subtitle</h6>
+    <p class="card-text">
+    description
+    </p>
+    <ul class="list-group list-group-flush">
+  <li class="list-group-item">subscriber_count</li>
+  <li class="list-group-item">watchers_count</li>
+  <li class="list-group-item">stargazers_count</li>
+  <li class="list-group-item">forks</li>
+  <li class="list-group-item">created_at</li>
+    </ul>
+<a href="#" class="card-link">clone_url</a>
+<a href="#" class="card-link">contents_url</a> or button to open a modal
+  </div>
+</div>
+
+

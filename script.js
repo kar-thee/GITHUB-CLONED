@@ -150,23 +150,38 @@ createdlist.innerHTML =`Created @ : ${reporesparticular.created_at}`
 let languageparticular = document.getElementById('languageparticular')
 languageparticular.innerHTML = `Language : ${reporesparticular.language}`
 
+let contentsurlparticular = reporesparticular.contents_url
+ let contentsUrlnew =contentsurlparticular.split('{')
+
 let contentbutton = document.getElementById('contentbutton')
 contentbutton.addEventListener('click', e =>{
+    
     let repocontentpage = document.getElementById('repocontentpage')
     let particularRepoModalBodycontent = document.createElement('div')
     particularRepoModalBodycontent.id = "particularRepoModalBodycontent"
     particularRepoModalBodycontent.className= "modal-body"
-     let contentsurlparticular = reporesparticular.contents_url
-     let contentsUrlnew =contentsurlparticular.split("{")
+     
      console.log(contentsUrlnew[0]+" jubucontentsurlsplitted")
 
-     let contentul = document.createElement('ul')
-     contentul.setAttribute('class',"d-flex flex-column")
-     contentul.setAttribute('id','contentul')
+    //  let contentul = document.createElement('ul')
+    //  contentul.setAttribute('class',"d-flex flex-column")
+    //  contentul.setAttribute('id',"contentul")
 
-     contentparticular(contentsUrlnew[0]); //call abc
+     
+        contentparticular(contentsUrlnew[0]); //call func
 
-     async function contentparticular(url){
+
+})
+     
+    }
+    //  console.log(particularrepocontentchild+"foreachelemen")
+ catch (error) {
+    console.log(error)
+    }
+}
+
+async function contentparticular(url)
+     {
         //testing content repo
 
         try {
@@ -176,45 +191,33 @@ contentbutton.addEventListener('click', e =>{
                     "Accept": "application/vnd.github.v3+json"
                 }
             })
-        var repores = await reporeq.json()
+        var repores = await reporeqs.json()
         console.log("this is repo-content response")
         console.log (repores)
         // particularrepocontentchild = repores
-        repores.forEach(element => {
+
+        repores.forEach(function (e) {
+            
         let elementliName = document.createElement('li')
         elementliName.setAttribute('class',"p-2 mb-3")
-        elementliName.setAttribute('id',`${element.name}`)
-        elementliName.innerHTML = element.name
+        elementliName.setAttribute('id',e.name)
+        elementliName.innerHTML = e.name
+        //console.log(`name parti`+elementliName)
         let contentlink = document.createElement('a')
-        contentlink.setAttribute('href',`${element.download_url}`)
+        contentlink.setAttribute('href',e.download_url)
         contentlink.append(elementliName)
-        contentul.append(contentlink)
+        //contentul.append(contentlink)
+        let particularRepoModalBody = document.getElementById("particularRepoModalBody")
+        particularRepoModalBody.append(contentlink)
+        // let test1 = document.getElementById('test1')
+        // test1.append(contentlink)
         })
 
-    
-        }
+    }
          catch (error) {
             return (error)
         }
     }
-
-     
-     
-
-    //  console.log(particularrepocontentchild+"foreachelemen")
-
-     
-     
-    repocontentpage.append(contentul)
-})
-    
-}
- catch (error) {
-    console.log(error)
-}
-}
-
-
 
 
 
@@ -233,16 +236,26 @@ async function getUserRepo(repoUrl){
     console.log("this is repo response")
     console.log(repores)
 
+    let repositories = document.getElementById('repositories')
+
+    repores.forEach(function (ele) {
+
+        
+
+    })
+    
+
+
     }
      catch (error) {
         console.log(error)
     }
 }
 
-function repoContent(){
-    var repoContentUrl = `https://api.github.com/repos/`+userName+`/`+repoName+`/contents`
-    console.log(repoContentUrl)
-}
+// function repoContent(){
+//     var repoContentUrl = `https://api.github.com/repos/`+userName+`/`+repoName+`/contents`
+//     console.log(repoContentUrl)
+// }
 
 // getUserInfo(url)
 // repoContent()
